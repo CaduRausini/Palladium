@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Formatações Genéricas */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+img {
+    width: 100%;
+}
+
+/* Fim Formatações Genéricas */
+
+.header-page {
+    height: 80px;
+    padding: 0 30px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-menu ul {
+    display: flex;
+}
+
+.header-menu li {
+    margin-left: 20px;
+}
