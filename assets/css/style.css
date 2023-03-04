@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-light: #fff;
+    --color-orange: #e6630d;
+    --color-blue: rgb(12, 7, 39);
+    --border-radius: 5px;
+    --trnasition: .5s;
+    --gradiente-start: rgba(4, 9, 30, .3);
+    --gradiente-end: rgba(4, 9, 30, .9);
+}
+
+
 /* Formatações Genéricas */
 body {
     font-family: 'Poppins', sans-serif;
@@ -15,8 +26,13 @@ ul {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: var(--color-light);
     font-weight: 700;
+    transition: var(--trnasition);
+}
+
+a:hover {
+    color: var(--color-orange);
 }
 
 img {
@@ -25,13 +41,19 @@ img {
 
 /* Fim Formatações Genéricas */
 
+/* Header */
+
 .header-page {
-    height: 80px;
+    height: 100px;
     padding: 0 30px;
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
 }
 
 .header-menu ul {
@@ -41,3 +63,108 @@ img {
 .header-menu li {
     margin-left: 20px;
 }
+
+.header-title {
+    color: var(--color-light);
+    font-size: 32px;
+}
+
+.header-span {
+    background-color: var(--color-orange);
+    padding: 5px;
+    border-radius: var(--border-radius);
+}
+
+/* Fim Header */
+
+/* Hero */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)),
+        url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-light);
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 9vmin;
+    margin: 30px 0;
+}
+
+.hero p {
+    width: 70%;
+    margin: 20px 0 30px;
+}
+
+.btn {
+    background-color: var(--color-orange);
+    border: 2px solid var(--color-orange);
+    padding: 8px 35px;
+    border-radius: var(--border-radius);
+    transition: var(--trnasition);
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
+/* Fim Hero */
+
+/* Paraíso */
+.paradise {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.paradise div {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+section h2 {
+    font-size: 50px;
+    text-align: center;
+    margin: 30px;
+}
+
+section div {
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    margin: 20px;
+    border-radius: var(--border-radius);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+section #container-a{
+    background-image: url(../images/explore1.jpg);
+    
+}
+
+section #container-b {
+    background-image: url(../images/explore2.jpg);
+}
+
+section #container-c {
+    background-image: url(../images/explore3.jpg);
+}
+
+/* Fim Paraíso */
