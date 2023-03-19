@@ -4,16 +4,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --color-light: #fff;
     --color-orange: #e6630d;
     --color-blue: rgb(12, 7, 39);
     --border-radius: 5px;
-    --trnasition: .5s;
+    --transition: .5s;
     --gradiente-start: rgba(4, 9, 30, .3);
     --gradiente-end: rgba(4, 9, 30, .9);
 }
-
 
 /* Formatações Genéricas */
 body {
@@ -22,13 +25,15 @@ body {
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
     color: var(--color-light);
     font-weight: 700;
-    transition: var(--trnasition);
+    transition: var(--transition);
 }
 
 a:hover {
@@ -44,24 +49,30 @@ img {
 /* Header */
 
 .header-page {
+    width: 100%;
     height: 100px;
-    padding: 0 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    padding: 20px;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-
+    color: var(--color-light);
+    transition: var(--transition);
+    /* border: 1px solid #000; */
 }
 
 .header-menu ul {
     display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .header-menu li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .header-title {
@@ -75,23 +86,28 @@ img {
     border-radius: var(--border-radius);
 }
 
+.active-scroll {
+    background-color: rgb(1, 1, 69, 0.89);
+}
+
 /* Fim Header */
 
 /* Hero */
 .hero {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    color: var(--color-light);
+    text-align: center;
     background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)),
         url(../images/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--color-light);
-    text-align: center;
 }
 
 .hero h2 {
@@ -105,66 +121,321 @@ img {
 }
 
 .btn {
+    padding: 8px 35px;
     background-color: var(--color-orange);
     border: 2px solid var(--color-orange);
-    padding: 8px 35px;
     border-radius: var(--border-radius);
-    transition: var(--trnasition);
+    transition: var(--transition);
 }
 
 .btn:hover {
     background-color: transparent;
+    color: var(--color-orange);
 }
 
 /* Fim Hero */
 
 /* Paraíso */
 .paradise {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
-}
-
-.paradise div {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-}
-
-section h2 {
-    font-size: 50px;
-    text-align: center;
-    margin: 30px;
-}
-
-section div {
-    width: 100%;
+    width: 85%;
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    margin: auto;
+    text-align: center;
+    padding: 20px 0;
+    /* border: 1px solid #000; */
+}
+
+.paradise h2 {
+    text-align: center;
+    font-size: 6vmin;
+    margin: 20px 0;
+}
+
+.paradise-itens {
+    width: 100%;
     display: flex;
-    margin: 20px;
-    border-radius: var(--border-radius);
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.paradise-itens div {
+    width: 30%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-    position: relative;
+    border-radius: var(--border-radius);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    transition: var(--transition);
+    /* border: 1px solid #000; */
 }
 
-section #container-a{
-    background-image: url(../images/explore1.jpg);
-    
+.paradise-itens div:hover {
+    transform: scale(1.1);
 }
 
-section #container-b {
-    background-image: url(../images/explore2.jpg);
+.paradise-img1 {
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)),
+        url(../images/explore1.jpg);
 }
 
-section #container-c {
-    background-image: url(../images/explore3.jpg);
+.paradise-img2 {
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)),
+        url(../images/explore2.jpg);
+}
+
+.paradise-img3 {
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)),
+        url(../images/explore3.jpg);
 }
 
 /* Fim Paraíso */
+
+/* Discover */
+.discover {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(var(--gradiente-start), var(--gradiente-end)),
+        url(../images/emcasa.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.discover-content {
+    width: 50%;
+    padding: 50px;
+    color: var(--color-light);
+}
+
+.discover-content h2 {
+    font-size: 7vmin;
+}
+
+.discover-content p {
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 32px;
+}
+
+/* Fim Discover */
+
+/* gallery */
+.gallery {
+    width: 90%;
+    min-height: 100vh;
+    margin: 50px auto;
+    /* border: 1px solid #000; */
+}
+
+.gallery-title {
+    margin: 30px;
+    text-align: center;
+    font-size: 6vmin;
+}
+
+.gallery-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.gallery-item {
+    width: 28%;
+    margin: 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 1px 1px 30px #ccc;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery-item img {
+    width: 90%;
+    border-radius: var(--border-radius);
+}
+
+.gallery-item h3 {
+    margin: 20px 0;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.gallery-item p {
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+/* Fim gallery */
+/* footer */
+.footer {
+    width: 100%;
+    min-height: 400px;
+    background-color: var(--color-blue);
+    color: var(--color-light);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px 30px;
+    font-size: 0.8rem;
+}
+
+.nav-footer,
+div {
+    margin: 20px 0;
+}
+
+.nav-footer li {
+    margin: 10px 0;
+}
+
+.nav-footer a:hover {
+    color: var(--color-orange);
+}
+
+.fa-brands {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+
+.fa-brands:hover {
+    color: var(--color-orange);
+}
+
+.footer-items {
+    min-width: 15%;
+}
+
+.footer-items h4 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-orange);
+}
+
+.footer-items h3 {
+    font-weight: 900;
+    margin: 15px 0 10px;
+}
+
+.footer-items p {
+    margin: 5px 0;
+}
+
+.footer-items address {
+    font-style: normal;
+}
+
+
+/* Mobile */
+@media (max-width:1000px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-bar {
+        padding: 0;
+    }
+
+    .logo {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background-color: var(--color-blue);
+        margin-top: -1100px;
+        transition: var(--transition);
+    }
+
+    .nav-menu li {
+        margin: 30px auto;
+    }
+
+    .nav-menu a {
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .header-content h1 {
+        font-size: 7vmin;
+
+    }
+
+    .mobile-menu {
+        margin-top: 0px;
+    }
+
+    .box-list {
+        flex-direction: column;
+    }
+
+    .box-list-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .gallery-item {
+        width: 85%;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+
+    .footer-items {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 60px;
+    }
+}
+
+@media(max-width: 555px) {
+
+    .footer-items {
+        width: 100%;
+    }
+}
+
+/* Pensando no Responsivo */
+@media(max-width: 1020px) {
+    .paradise h2 {
+        font-size: 5vmin;
+    }
+
+    .paradise-itens {
+        flex-direction: column;
+    }
+
+    .paradise-itens div {
+        width: 80%;
+    }
+}
